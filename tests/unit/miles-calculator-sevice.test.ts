@@ -1,26 +1,14 @@
-import { faker } from "@faker-js/faker";
 import { calculateMiles } from "../../src/services/miles-calculator-service";
+import { economicTripMock, firstClassTripMock } from "./unit-factories/miles-calculator-service-factory";
 
 describe("Miles Calculator Service", () => {
 
-    it("should return calculated miles", () => {
+    it("should return calculated miles", () => {     
+        const economic = calculateMiles(economicTripMock);
+        const firstClass = calculateMiles(firstClassTripMock);
 
-        const economicTripMock = {
-            code: faker.string.alphanumeric(5),
-            origin: {
-                lat: faker.location.latitude(),
-                lon: faker.location.longitude()
-            },
-            destination: {
-                lat: faker.location.latitude(),
-                lon: faker.location.longitude()
-            },
-            miles: faker.datatype.boolean(),
-            plane: faker.airline.airplane(),
-            service: 
-
-
-
-        }
+        expect(economic).toEqual(expect.any(Number));
+        expect(firstClass).toEqual(expect.any(Number));
     })
+
 })
