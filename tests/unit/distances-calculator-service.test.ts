@@ -1,6 +1,10 @@
 import { faker } from "@faker-js/faker"
 import { applyHaversineFormula, calculateDistance, toRadius } from "../../src/services/distances-calculator-service";
 
+beforeEach(() => {
+    jest.clearAllMocks();
+})
+
 describe("Distance Calculator Unit Service Testing", () => {
        
     it("should return the calculated distance", () => {

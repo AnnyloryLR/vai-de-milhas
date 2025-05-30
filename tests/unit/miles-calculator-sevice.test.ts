@@ -1,6 +1,10 @@
 import { calculateMiles } from "../../src/services/miles-calculator-service";
 import { economicTripMock, firstClassTripMock } from "./unit-factories/miles-calculator-service-factory";
 
+beforeEach(() => {
+    jest.clearAllMocks();
+})
+
 describe("Miles Calculator Service", () => {
 
     it("should return calculated miles", () => {     

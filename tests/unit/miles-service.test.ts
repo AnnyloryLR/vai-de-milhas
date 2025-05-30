@@ -3,6 +3,10 @@ import * as milesRepository from "../../src/repositories/miles-repository";
 import { generateMilesForTrip, getMilesFromCode } from "../../src/services/miles-service";
 import { tripMock } from "./unit-factories/miles-service-factory";
 
+beforeEach(() => {
+    jest.clearAllMocks();
+})
+
 describe(" Miles Service Unit Test", () => {
     it("should return an error if the miles code already exists", () => {
         jest.spyOn(milesRepository, "findMiles").mockResolvedValueOnce({
